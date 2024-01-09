@@ -1,0 +1,61 @@
+import subprocess
+subprocess.run(['python3', './nonsoftware/businessforsale.py']) # FIRST TO GET DATA DIRECTLY
+subprocess.run(['python3', './nonsoftware/ana.py'])
+subprocess.run(['python3', './nonsoftware/axial.py'])
+subprocess.run(['python3', './nonsoftware/benjamin.py']) #
+subprocess.run(['python3', './nonsoftware/bizben.py']) #
+subprocess.run(['python3', './nonsoftware/bizbuysell.py'])
+subprocess.run(['python3', './nonsoftware/bizquest.py'])
+subprocess.run(['python3', './nonsoftware/bristolgroup.py']) #
+subprocess.run(['python3', './nonsoftware/businessbroker.py']) #
+subprocess.run(['python3', './nonsoftware/bizex.py'])
+subprocess.run(['python3', './nonsoftware/benchmark.py'])
+subprocess.run(['python3', './nonsoftware/dealforce.py'])
+# subprocess.run(['python3', './nonsoftware/dealstream.py'])
+subprocess.run(['python3', './nonsoftware/edison.py'])
+subprocess.run(['python3', './nonsoftware/fcbb.py']) 
+subprocess.run(['python3', './nonsoftware/fbb.py']) 
+subprocess.run(['python3', './nonsoftware/globalx.py']) 
+subprocess.run(['python3', './nonsoftware/gottesman.py']) 
+# subprocess.run(['python3', './nonsoftware/kumo.py']) 
+subprocess.run(['python3', './nonsoftware/thefirm.py'])
+subprocess.run(['python3', './nonsoftware/murphy.py'])
+subprocess.run(['python3', './nonsoftware/sybb.py'])
+subprocess.run(['python3', './nonsoftware/transworld.py'])
+subprocess.run(['python3', './nonsoftware/vestedbb.py'])
+subprocess.run(['python3', './nonsoftware/texasbusinessbuyer.py'])
+subprocess.run(['python3', './nonsoftware/roibusinessbrokers.py'])
+subprocess.run(['python3', './nonsoftware/linkbusiness.py'])
+subprocess.run(['python3', './nonsoftware/transitiongroup.py'])
+subprocess.run(['python3', './nonsoftware/lisitenassociates.py'])
+subprocess.run(['python3', './nonsoftware/smblist.py'])
+# subprocess.run(['python3', './nonsoftware/sunbelt.py']) #vpn required
+subprocess.run(['python3', './nonsoftware/smergers.py'])
+# subprocess.run(['python3', './nonsoftware/calhoun.py'])  # Vpn required
+subprocess.run(['python3', './nonsoftware/ninbb.py'])
+subprocess.run(['python3', './nonsoftware/nationalfranchise.py'])
+subprocess.run(['python3', './nonsoftware/summitacqusitions.py'])
+# subprocess.run(['python3', './nonsoftware/nationalfranchise.py']) #to be completed
+subprocess.run(['python3', './nonsoftware/ninbb.py'])
+subprocess.run(['python3', './nonsoftware/kensington.py'])
+
+# subprocess.run(['python3', './software/kumo_saas.py'])
+subprocess.run(['python3', './software/acquire.py'])
+subprocess.run(['python3', './software/Flippa.py'])
+subprocess.run(['python3', './software/quitelight.py'])
+subprocess.run(['python3', './software/websitecolser_new.py'])
+subprocess.run(['python3', './software/empireflippers.py'])
+subprocess.run(['python3', './software/websiteproperties.py'])
+subprocess.run(['python3', './software/conturica.py']) # here
+subprocess.run(['python3', './software/barney.py'])
+subprocess.run(['python3', './software/latona.py'])
+subprocess.run(['python3', './software/appbusinessbroker.py'])
+subprocess.run(['python3', './software/buysellempire.py'])
+subprocess.run(['python3', './software/alibroker.py'])
+subprocess.run(['python3', './software/dealfeed.py'])
+subprocess.run(['python3', './software/sellerforce.py'])
+subprocess.run(['python3', './software/acquesitionsdirect.py'])
+subprocess.run(['python3', './software/bizbroker24.py'])
+subprocess.run(['python3', './software/dealflowalerts.py'])
+# subprocess.run(['python3', 'merger_soft.py'])
+# subprocess.run(['python3', 'merger.py'])

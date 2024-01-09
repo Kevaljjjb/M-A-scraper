@@ -1,0 +1,9 @@
+selenium
+requests
+webdriver-manager
+undetected-chromedriver
+gspread
+pytz
+lxml
+pandas
+openpyxl
