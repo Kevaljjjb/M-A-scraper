@@ -48,7 +48,7 @@ def fetch_data(urls):
             
 
             print(city)
-            source='latona.com'
+            source='alibroker.com'
             try:
                 revenue=driver.find_element(By.XPATH, '//h5[text()="Annual revenue"]/../../following-sibling::div').text
             except:

@@ -74,7 +74,6 @@ def inner_page(urls):
                     location = 'N/A'
                     print(f"An error occurred: {e}")
 
-                print(city)
                 source='flippa.com'
                 try:
                     element=driver.find_element(By.XPATH,'//span[contains(text(),"Monthly Profit")]/following-sibling::div').text
@@ -88,10 +87,6 @@ def inner_page(urls):
                     val_rev=float(val_rev)
                     revenue=cashflow*val_rev
 
-
-
-                    print("cashflow :",cashflow)
-                    print("revenue :",revenue)
                 except Exception as e:
                     import traceback
                     print(f"An error occurred while fetching data from {url}: {str(e)} \n")

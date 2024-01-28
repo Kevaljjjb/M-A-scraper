@@ -1,14 +1,19 @@
 import subprocess
-subprocess.run(['python3', './nonsoftware/businessforsale.py']) # FIRST TO GET DATA DIRECTLY
+subprocess.run(['python3', './nonsoftware/businessforsale.py']) # FIRST TO RUN BECAUSE IT CLEARS THE OUTPUT FILE AND PUT HEADERS  
+subprocess.run(['python3', './nonsoftware/businessforsale_asking_filter.py'])
 subprocess.run(['python3', './nonsoftware/ana.py'])
 subprocess.run(['python3', './nonsoftware/axial.py'])
 subprocess.run(['python3', './nonsoftware/benjamin.py']) #
 subprocess.run(['python3', './nonsoftware/bizben.py']) #
+subprocess.run(['python3', './nonsoftware/bizben_asking_filter.py']) #
 subprocess.run(['python3', './nonsoftware/bizbuysell.py'])
+subprocess.run(['python3', './nonsoftware/bizbuysell_asking_filter.py']) #
 subprocess.run(['python3', './nonsoftware/bizquest.py'])
 subprocess.run(['python3', './nonsoftware/bristolgroup.py']) #
 subprocess.run(['python3', './nonsoftware/businessbroker.py']) #
+subprocess.run(['python3', './nonsoftware/businessbroker_asking_filter.py']) #
 subprocess.run(['python3', './nonsoftware/bizex.py'])
+subprocess.run(['python3', './nonsoftware/bizex_asking_filter.py']) #
 subprocess.run(['python3', './nonsoftware/benchmark.py'])
 subprocess.run(['python3', './nonsoftware/dealforce.py'])
 # subprocess.run(['python3', './nonsoftware/dealstream.py'])

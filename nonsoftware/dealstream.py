@@ -8,11 +8,10 @@ import pytz
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 import undetected_chromedriver as uc
 
 # Define the header values
@@ -233,7 +232,7 @@ if __name__ == "__main__":
     # options.add_argument(f"user-agent={user_agent}")
     options.headless = False
     # Initialize the Chrome WebDriver
-    driver = uc.Chrome(options=options)
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=options)
     data = main_page(current_url,driver)
     # for i in data:
     #     fetch_data(i)

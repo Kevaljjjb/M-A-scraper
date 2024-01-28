@@ -16,7 +16,7 @@ def insert_data(filename):
         if len(data) > 0:
             gh = gspread.service_account("./credentials/credentials_file.json")
             wk = gh.open("Teddy Scraper")
-            sh = wk.worksheet("Deal")
+            sh = wk.worksheet("Deal software")
             sh.insert_rows(data, 2)
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -44,5 +44,5 @@ def insert_csv_to_excel(csv_filename, excel_filename):
     print(f"Updated Excel file saved as: {updated_excel_file}")
 
 if __name__ == "__main__":
-    insert_csv_to_excel('./soft_data.csv','./Deal copy 2.xlsx')
-    # insert_data('./soft_data.csv')
+    insert_csv_to_excel('./soft_data.csv','./Deal_softwares.xlsx')
+    insert_data('./soft_data.csv')

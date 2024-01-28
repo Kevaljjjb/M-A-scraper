@@ -156,7 +156,6 @@ def main():
     driver.maximize_window()
     time.sleep(8)
 
-    driver.execute_script('''btn=document.querySelector('input[name="business-location"][value="USA"]'); btn.click();''')
     method='''
     function scrollToPageBottom() {
         window.scrollTo(0, document.body.scrollHeight);

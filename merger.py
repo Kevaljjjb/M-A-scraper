@@ -1,30 +1,48 @@
 import pandas as pd
+from openpyxl import load_workbook
+from openpyxl.utils.dataframe import dataframe_to_rows
+import csv
+import gspread
 
-# Define the path to your CSV file and the Excel file
-csv_file_path = 'Output.csv'
-excel_file_path = 'Deal.xlsx'
+def insert_data(filename):
+    try:
+        data = []
+        with open(filename, 'r') as f:
+            reader = csv.reader(f)
+            next(reader,None)  # Skip the header row
+            for row in reader:
+                data.append(row)
 
-# Read the CSV data into a DataFrame
-csv_data = pd.read_csv(csv_file_path)
+        if len(data) > 0:
+            gh = gspread.service_account("./credentials/credentials_file.json")
+            wk = gh.open("Teddy Scraper")
+            sh = wk.worksheet("Deal")
+            sh.insert_rows(data, 2)
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
-# Read the existing Excel data (if it exists) into a DataFrame
-try:
-    excel_data = pd.read_excel(excel_file_path)
-except FileNotFoundError:
-    # If the Excel file doesn't exist, create a new DataFrame
-    excel_data = pd.DataFrame()
+def insert_csv_to_excel(csv_filename, excel_filename):
+    # Function to insert rows
+    def insert_rows(ws, dataframe, row_start=1):
+        for r_idx, row in enumerate(dataframe_to_rows(dataframe, index=False, header=False), row_start):
+            for c_idx, value in enumerate(row, 1):
+                ws.cell(row=r_idx, column=c_idx, value=value)
 
-# Append the CSV data to the existing Excel data
-combined_data = pd.concat([excel_data, csv_data], ignore_index=True)
+    # Read the CSV file
+    csv_data = pd.read_csv(csv_filename)
 
-# Convert the "Scraping Date" column to datetime without a time portion
-combined_data['Scraping Date'] = pd.to_datetime(combined_data['Scraping Date'], format='%m-%d-%y').dt.date
+    # Load the Excel file
+    book = load_workbook(excel_filename)
+    sheet = book.active
 
-# Sort the combined data by the "Scraping Date" column in reverse order
-combined_data.sort_values(by='Scraping Date', ascending=False, inplace=True)
+    # Insert CSV data into Excel
+    insert_rows(sheet, csv_data, row_start=2)  # Start from row 2 to keep the header
 
-# Write the sorted data back to the Excel file in append mode
-with pd.ExcelWriter(excel_file_path, engine='openpyxl', mode='a', if_sheet_exists='replace') as writer:
-    combined_data.to_excel(writer, index=False, sheet_name='Sheet1')
+    # Save the updated Excel file
+    updated_excel_file = excel_filename
+    book.save(updated_excel_file)
+    print(f"Updated Excel file saved as: {updated_excel_file}")
 
-print("Data appended and sorted in reverse order in the Excel file.")
+if __name__ == "__main__":
+    insert_csv_to_excel('./output.csv','./Deal.xlsx')
+    insert_data('./output.csv')

@@ -29,8 +29,6 @@ scroll_distance = 500
 scroll_script = f"window.scrollBy(0,{scroll_distance});"
 filter_js='''btn=document.querySelector("#inlineCheckbox12");
              btn.checked=true;
-             btn2=document.querySelector("#inlineCheckbox6"); 
-             btn2.checked=true;
             '''
 driver.execute_script(filter_js)
 time.sleep(5)
